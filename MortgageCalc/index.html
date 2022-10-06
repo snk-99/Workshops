@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mortgage calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <section class="vh-100" style="background-color: #e2e8eb;" class="container-sm ">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+                            <!-- login form -->
+                            <form class="col-12 g-3">
+
+                                <h3 class="mb-5">Mortgage calculator</h3>
+
+                                <!-- input section -->
+                                <div class="form-outline mb-4">
+                                    <label>Loan Amount</label>
+                                    <input id="loanAmount" type="number" class="form-control" "
+                                        placeholder=" $24,000">
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label>Loan Term</label>
+                                    <input id="loanTerm" type="number" class="form-control" placeholder="15 Years">
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label>Interest</label>
+                                    <input id="loanInterest" type="number" class="form-control" placeholder="8.556%">
+                                </div>
+
+
+                                <div class="container text-center">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="shadow-lg p-3 mb-5 bg-body rounded">
+                                                <h6>Total Cost</h6>
+                                                <p id="sumAmount"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="shadow-lg p-3 mb-5 bg-body rounded">
+                                                <h6>Monthly Cost</h6>
+                                                <p id="monthlyCost">
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button id="calculateBtn" class="btn btn-primary" type="submit">Calclate</button>
+                        </div>
+
+
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+        <script src="./mortgage.js"></script>
+    </section>
+</body>
+
+</html>
