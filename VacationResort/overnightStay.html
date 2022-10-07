@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Resort</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <ul><a href="./homePage.html">Home</a></ul>
+            <ul><a href="./overnightStay.html">Overnight Stay</a></ul>
+
+        </ul>
+    </nav>
+
+    <form action="" onsubmit="getRoomRate(event)" id="form">
+
+        <h1>Overnight Stay</h1>
+        <div id="userInfo">
+            <label for="user-name">Full Name</label>
+            <input type="text" id="user-name">
+            <label for="user-email">Email</label>
+            <input type="text" id="user-email">
+        </div>
+
+
+        <label for="checkin-date">Checkin Date:</label>
+        <input type="date" id="checkin-date">
+
+        <label for="number-of-nights">Number of Night Stay:</label>
+        <input type="number" id="number-of-nights">
+
+        <fieldset>
+            <legend>Room Type</legend>
+            <input type="radio" name="bedType" id="king-option" value="king">
+            <label for="king-option">King</label>
+
+            <input type="radio" name="bedType" id="queen-option" value="queen">
+            <label for="queen-option">Queen</label>
+
+            <input type="radio" name="bedType" id="twoBed-option" value="twoBed">
+            <label for="twoBed-option">2-Bedroom Suite</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Guests</legend>
+            <label for="adults">Adults</label>
+            <input type="number" id="adults">
+
+            <label for="kids">Kids</label>
+            <input type="number" id="kids">
+
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Discounts</legend>
+            <input type="radio" name="discounts" id="none-option" value="none">
+            <label for="none-option">None</label>
+
+            <input type="radio" name="discounts" id="senior-option" value="senior">
+            <label for="senior-option">AAA/Senior(10%)</label>
+
+            <input type="radio" name="discounts" id="military-option" value="military">
+            <label for="military-option">Military(20%)</label>
+        </fieldset>
+
+
+        <button type="submit">Room Rate</button>
+
+    </form>
+    <p id="message"> </p>
+    <label for="roomCost">Room Cost:</label>
+    <p id="roomCost"></p>
+
+    <script src="./scripts/vacation.js"></script>
+</body>
+
+
+</html>

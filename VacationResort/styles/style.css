@@ -1,0 +1,19 @@
+* {
+  margin: 0.2rem;
+  padding: 0.2rem;
+}
+
+ul {
+  float: left;
+}
+
+a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+
+#form {
+  padding: 2rem;
+  margin: 1rem;
+}
