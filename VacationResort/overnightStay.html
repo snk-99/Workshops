@@ -6,13 +6,119 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vacation Resort</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<style>
 
-</style>
 
 <body>
+    <nav>
+        <div class="container">
+            <header class="d-flex justify-content-center py-3">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="./homePage.html" class="nav-link active" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item"><a href="./overnightStay.html" class="nav-link">Your Stay</a></li>
+                    <!-- <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li> -->
+                </ul>
+            </header>
+        </div>
+    </nav>
+    <div class="modal position-static d-block py-5" tabindex="-1" id=" modalSignin">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-4 shadow">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
+                    <h1 class="fw-bold mb-0 fs-2">Your Stay</h1>
+
+                </div>
+
+                <div class="modal-body p-5 pt-0 ">
+                    <form onsubmit="getRoomRate(event)" id="form">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control rounded-3" id="floatingInput"
+                                placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control rounded-3" id="floatingPassword"
+                                placeholder="Password">
+                            <label for="floatingPassword">Full Name</label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="checkin-date">Check-in Date:</label>
+                            <input type="date" id="checkin-date">
+                        </div>
+                        <div class="mb-3">
+                            <label for="number-of-nights">Number of Night Stay:</label>
+                            <input type="number" id="number-of-nights">
+                        </div>
+
+
+                        <fieldset class="mb-3">
+                            <legend>Room Type</legend>
+                            <input type="radio" name="bedType" id="king-option" value="king">
+                            <label for="king-option">King</label>
+
+                            <input type="radio" name="bedType" id="queen-option" value="queen">
+                            <label for="queen-option">Queen</label>
+
+                            <input type="radio" name="bedType" id="twoBed-option" value="twoBed">
+                            <label for="twoBed-option">2-Bedroom Suite</label>
+                        </fieldset>
+
+                        <select class="form-select mb-3" aria-label="Default select example">
+                            <option selected>Adults</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Kids</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+
+                        <fieldset class="mb-3">
+                            <legend>Discounts</legend>
+                            <input type="radio" name="discounts" id="none-option" value="none">
+                            <label for="none-option">None</label>
+
+                            <input type="radio" name="discounts" id="senior-option" value="senior">
+                            <label for="senior-option">AAA/Senior(10%)</label>
+
+                            <input type="radio" name="discounts" id="military-option" value="military">
+                            <label for="military-option">Military(20%)</label>
+                        </fieldset>
+
+                        <hr class="my-4">
+                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Room Rate</button>
+                    </form>
+
+                    <label for="roomCost"></label>
+                    <p id="roomCost"></p>
+                    <label for="discount"></label>
+                    <p id="discount"></p>
+                    <label for="discountedRoom"></label>
+                    <p id="discountedRoom"></p>
+                    <label for="tax"></label>
+                    <p id="tax"></p>
+                    <label for="total"></label>
+                    <p id="total"></p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/vacation.js"></script>
+</body>
+<!-- <body>
     <nav>
         <ul>
             <ul><a href="./homePage.html">Home</a></ul>
@@ -21,58 +127,20 @@
         </ul>
     </nav>
 
-    <form action="" onsubmit="getRoomRate(event)" id="form">
+    <form class="text-center py-5" onsubmit="getRoomRate(event)" id="form">
 
         <h1>Overnight Stay</h1>
-        <div id="userInfo">
+        <div id="userName" class="mb-3">
             <label for="user-name">Full Name</label>
             <input type="text" id="user-name">
+        </div>
+        <div id="userEmail" class="mb-3">
             <label for="user-email">Email</label>
             <input type="text" id="user-email">
         </div>
 
 
-        <label for="checkin-date">Checkin Date:</label>
-        <input type="date" id="checkin-date">
-
-        <label for="number-of-nights">Number of Night Stay:</label>
-        <input type="number" id="number-of-nights">
-
-        <fieldset>
-            <legend>Room Type</legend>
-            <input type="radio" name="bedType" id="king-option" value="king">
-            <label for="king-option">King</label>
-
-            <input type="radio" name="bedType" id="queen-option" value="queen">
-            <label for="queen-option">Queen</label>
-
-            <input type="radio" name="bedType" id="twoBed-option" value="twoBed">
-            <label for="twoBed-option">2-Bedroom Suite</label>
-        </fieldset>
-
-        <fieldset>
-            <legend>Guests</legend>
-            <label for="adults">Adults</label>
-            <input type="number" id="adults">
-
-            <label for="kids">Kids</label>
-            <input type="number" id="kids">
-
-
-        </fieldset>
-
-        <fieldset>
-            <legend>Discounts</legend>
-            <input type="radio" name="discounts" id="none-option" value="none">
-            <label for="none-option">None</label>
-
-            <input type="radio" name="discounts" id="senior-option" value="senior">
-            <label for="senior-option">AAA/Senior(10%)</label>
-
-            <input type="radio" name="discounts" id="military-option" value="military">
-            <label for="military-option">Military(20%)</label>
-        </fieldset>
-
+        
 
         <button type="submit">Room Rate</button>
 
@@ -90,7 +158,7 @@
     <p id="total"></p>
 
     <script src="./scripts/vacation.js"></script>
-</body>
+</body> -->
 
 
 </html>

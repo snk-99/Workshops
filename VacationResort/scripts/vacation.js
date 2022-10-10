@@ -10,9 +10,6 @@ function getRoomRate(event) {
     let roomSelected = document.querySelector("input[name='bedType']:checked").value;
     let pickedDiscount = document.querySelector("input[name='discounts']:checked").value;
 
-    // let queen_kingPrice = numberOfNights * 150;
-    // let twoBedSuite = numberOfNights * 210;
-
 
     const month = checkInDate.getMonth();
     let inSeason = false;
