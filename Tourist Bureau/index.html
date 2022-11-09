@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities</title>
+</head>
+
+<body>
+    <select name="categoryList" id="categoryList" onchange="loadActivitiesList();">
+        <option value="">Select Category</option>
+        <option value="adventures">Adventures</option>
+        <option value="arts&crafts">Arts & Crafts</option>
+        <option value="museums">Museums</option>
+        <option value="wineTastings">Wine Tastings</option>
+        <option value="other">Other</option>
+    </select>
+    <br>
+    <select name="activities" id="activities" size="8"></select>
+    <p id="message"></p>
+
+    <script src="./ActivitiesPage/activities.js"></script>
+</body>
+
+
+</html>
