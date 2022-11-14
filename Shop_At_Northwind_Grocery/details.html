@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>Details</title>
+</head>
+
+<body>
+    <div id="product-details">
+        <h2></h2>
+        <div>productId</div>
+        <!-- <div>productName</div> -->
+        <div>unitPrice</div>
+        <div>unitsInStock</div>
+        <div>categoryId</div>
+        <div>supplier</div>
+        <div></div>
+    </div>
+    <!-- <div id="details-divs">
+        
+    </div> -->
+
+    <!-- <table id="details-table">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Units in stock</th>
+                <th>Category ID</th>
+                <th>Supplier</th>
+                <th>Discontinued</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table> -->
+
+    <script>
+        function getProductId() {
+            let parameters = new URLSearchParams(location.search);
+            // console.log(parameters.get("id"))
+            return parameters.get("productId");
+        }
+
+        function loadProduct(productId) {
+            return fetch(`http://localhost:8081/api/products/${productId}`)
+                .then((response) => response.json())
+
+        }
+
+
+        function fillProductDetails(product) {
+            const productDiv = document.querySelector("#product-details");
+            productDiv.querySelector("h2").innerText = product.productName
+            const detailDivs = productDiv.querySelectorAll("div");
+            detailDivs[0].innerText = product.productId;
+            detailDivs[0].innerText = product.unitPrice;
+            detailDivs[1].innerText = product.unitsInStock;
+            detailDivs[2].innerText = product.categoryId;
+            detailDivs[3].innerText = product.supplier;
+            if (product.discontinued == 'true') {
+                detailDivs[4].innerText = 'Product discontinued';
+            } else {
+                detailDivs[4].innerText = 'In Stock'
+            }
+        }
+
+        window.onload = () => {
+            loadProduct(getProductId()).then(product => fillProductDetails(product))
+        }
+    </script>
+</body>
+
+</html>
